@@ -25,6 +25,24 @@ extension RegistAuthUserViewController: UINavigationControllerDelegate {
 https://stackoverflow.com/questions/48101233/dont-use-safearea-inset-on-iphone-x-for-first-uitableviewcell
 Marking the "Content insets" under Size Inspector to "Never" worked for me. 
 
+### collectioViewCell に swipegestureをつける
+
+let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(sender:)))
+leftSwipe.direction = .right
+collectionView.addGestureRecognizer(leftSwipe)
+leftSwipe.delegate = collectionView
+
+// ここで他のジェスチャーも受け入れるかを判断。 delegateを CollectionViewに入れるのだ！
+extension UICollectionView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+    shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+-> Bool {
+        return true
+        }
+}
+
+
+
 ## Tabbar
 ### tabbarのアイコンの文字を消して、アイコンを真ん中に持ってくる 
 アイコンの文字を消す時は、baritem → image inset →　bottom を　−10, -12　にするとよい。
