@@ -19,6 +19,12 @@ extension RegistAuthUserViewController: UINavigationControllerDelegate {
         }
 }
 
+## CollectionView
+### 動画や画像を画面いっぱいに表示したいのに、初期表示がいっぱいにならない
+#### collectionView.contentInsetAdjustmentBehavior = .never
+https://stackoverflow.com/questions/48101233/dont-use-safearea-inset-on-iphone-x-for-first-uitableviewcell
+Marking the "Content insets" under Size Inspector to "Never" worked for me. 
+
 ## Tabbar
 ### tabbarのアイコンの文字を消して、アイコンを真ん中に持ってくる 
 アイコンの文字を消す時は、baritem → image inset →　bottom を　−10, -12　にするとよい。
