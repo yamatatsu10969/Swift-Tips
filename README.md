@@ -20,6 +20,15 @@ extension RegistAuthUserViewController: UINavigationControllerDelegate {
 }
 
 ## CollectionView
+### Cell情報の取得
+### 多分正攻法じゃない気がする笑
+guard let cell = collectionView.cellForItem(at: IndexPath(row: getNowWatchingCellIndex(collectionView), section: 0)) as? MovieCell else {
+return
+}
+func getNowWatchingCellIndex(_ scrollView: UIScrollView) -> Int {
+let nowVisiblePoint = scrollView.contentOffset.y
+return Int(nowVisiblePoint / view.bounds.height)
+}
 ### 動画や画像を画面いっぱいに表示したいのに、初期表示がいっぱいにならない
 #### collectionView.contentInsetAdjustmentBehavior = .never
 https://stackoverflow.com/questions/48101233/dont-use-safearea-inset-on-iphone-x-for-first-uitableviewcell
