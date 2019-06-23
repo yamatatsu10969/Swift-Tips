@@ -180,6 +180,22 @@ textField.attributedPlaceholder = NSAttributedString(string: "名前を入力し
 
 ```
 
+## ToolBar 
+### ToolBar （下）をコードで生成する
+ポイントは view.addSubView(toolBar) は viewWillAppear で行うこと！
+https://qiita.com/kamesoft/items/09386431c94eb922ee4c
+
+## WKWebView
+### 気をつける点
+１、WKWebViewはStoryboardからは貼り付けられない
+２、`view = webView`ではなく、addSubviewで画面にのせる
+３、Storyboardでおいたものはすでに生成されているので、`webView = WKWebView(frame: .zero, configuration: webConfiguration)`でもう一度生成すると二つwebViewができてしまう
+なのでとりあえず、
+storyboardのwebviewは消して、コードで生成したwkwebviewを使うか、もしくはその逆で行くかですね！
+
+stackViewが表示されないのは、
+｀view = webView｀でstackViewが置かれているview自身をwebViewに変更してしまってるため、表示されていないということですね！
+
 
 # Error
 ## beta版を使っているときにアプリを申請に出すとbinary errorでリジェクト
