@@ -107,6 +107,13 @@ extension UICollectionView: UIGestureRecognizerDelegate {
 ### tabbarのアイコンの文字を消して、アイコンを真ん中に持ってくる 
 アイコンの文字を消す時は、baritem → image inset →　bottom を　−10, -12　にするとよい。
 
+## ImageView
+### タップを検出する
+```
+imageView.isUserInteractionEnabled = true
+imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(test)))
+```
+
 
 ## UIView
 ### UIVeiwをコンポーネントして扱う。セルみたいにxibファイルで管理したいとき。
