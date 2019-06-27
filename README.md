@@ -66,6 +66,29 @@ extension RegistAuthUserViewController: UINavigationControllerDelegate {
 }
 ```
 
+### 戻るボタンのテキストを消す
+` navigationController!.navigationBar.topItem!.title = " " `
+
+### NavigationBar を消す　一時的に
+`navigationController?.setNavigationBarHidden(false, animated: false)`
+
+## TableViewCell
+### デフォルトのセルを使う
+```
+let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+let cell = UITableViewCell(style: .value2, reuseIdentifier: "cell")
+```
+#### アクセサリ
+```
+cell.textLabel?.text       = "東京都"
+cell.detailTextLabel?.text = "ここが詳細テキストラベルです"
+cell.accessoryType         = UITableViewCellAccessoryType.disclosureIndicator
+cell.imageView?.image      = UIImage(named: "eyecatch-image")
+```
+
+
 ## CollectionView
 ### Cell情報の取得
 ### 多分正攻法じゃない気がする笑
@@ -106,6 +129,9 @@ extension UICollectionView: UIGestureRecognizerDelegate {
 ## Tabbar
 ### tabbarのアイコンの文字を消して、アイコンを真ん中に持ってくる 
 アイコンの文字を消す時は、baritem → image inset →　bottom を　−10, -12　にするとよい。
+
+### tabbar を消す　一時的に
+`tabBarController?.tabBar.isHidden = true`
 
 ## ImageView
 ### タップを検出する
