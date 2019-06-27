@@ -80,7 +80,7 @@ let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
 let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
 let cell = UITableViewCell(style: .value2, reuseIdentifier: "cell")
 ```
-#### アクセサリ
+#### デフォのセルのアクセサリ
 ```
 cell.textLabel?.text       = "東京都"
 cell.detailTextLabel?.text = "ここが詳細テキストラベルです"
@@ -212,6 +212,10 @@ sendButton.isEnabled = false
 textField.attributedPlaceholder = NSAttributedString(string: "名前を入力してください。", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
 
 ```
+
+### 点滅するやつの色変更
+`UITextField.appearance().tintColor = .white`
+
 
 ## ToolBar 
 ### ToolBar （下）をコードで生成する
