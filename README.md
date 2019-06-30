@@ -1,5 +1,18 @@
 # Swift-Tips
 
+## AppDelegate
+### rootで管理する
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    Keyboard.configure()
+    Progress.configure()
+    window = UIWindow()
+    window?.makeKeyAndVisible()
+    window?.rootViewController = TabBarController()
+return true
+}
+```
+
 ## TableView
 ### 選択された時に色を変えないようにする
 `selectedStyle = .none `
