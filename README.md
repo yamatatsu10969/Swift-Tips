@@ -1,7 +1,9 @@
 # Swift-Tips
 
 ## TableView
-### 色を変えないようにする
+### 選択された時に色を変えないようにする
+`selectedStyle = .none `
+
 ```
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(false)
@@ -52,6 +54,20 @@ https://teratail.com/questions/46828
 let distanceFromViewTop: CGFloat = 200
 view.frame.height - distanceFromViewTop
 tableHeight.constant = tableView.contentSize.height
+```
+
+## ScrollView
+### 下にスクロールしているときは、navigationbarを閉じて、上にスクロールしているときは出す
+```
+extension TimelineViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        } else {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+}
 ```
 
 ## NavigationController 
@@ -231,7 +247,62 @@ https://qiita.com/kamesoft/items/09386431c94eb922ee4c
 storyboardのwebviewは消して、コードで生成したwkwebviewを使うか、もしくはその逆で行くかですね！
 
 stackViewが表示されないのは、
-｀view = webView｀でstackViewが置かれているview自身をwebViewに変更してしまってるため、表示されていないということですね！
+`view = webView` でstackViewが置かれているview自身をwebViewに変更してしまってるため、表示されていないということですね！
+
+
+## AudioServicesPlaySystemSound
+### 短い振動を出す
+`AudioServicesPlaySystemSound(SystemSoundID("1519")!)`
+
+
+## dispatchDeque
+### 非同期処理が何個もある場合 (配列の処理の時に、非同期処理にして性能を上げたいとき。)
+```
+// グループを作って
+let dispatchGroup = DispatchGroup()
+
+let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
+snapShot.documents.forEach({ (document) in
+// 一つ目をグループに入れて、
+dispatchGroup.enter()
+
+dispatchQueue.async {
+let id =  document.documentID
+let isEntried = [String](entriedOffers.keys).contains(document.documentID)
+var isConfirmed: Bool = false
+if isEntried {
+isConfirmed = entriedOffers[document.documentID] ?? false
+}
+var entryStatus: Offer.EntryStatus
+if isEntried && isConfirmed {
+entryStatus = .confirmed
+} else if isEntried {
+entryStatus = .entried
+} else {
+entryStatus = .notEntried
+}
+let offer = Offer(id: id, document: document.data(), entryStatus: entryStatus)
+offers.append(offer)
+dispatchGroup.leave()
+}
+})
+dispatchGroup.notify(queue: .main) {
+completion(offers, nil)
+}
+```
+
+
+### iosのUIを更新する処理は単一のスレッド(main thread)から実行しなければならない、というルールに従って処理を記述する例です。
+```
+// 重たい処理
+DispatchQueue.global().async {
+}
+// UIを更新する処理
+DispatchQueue.main.async {
+    weakSelf.tableView.reloadData()
+}
+```
+
 
 
 # Error
