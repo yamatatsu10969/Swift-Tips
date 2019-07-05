@@ -316,6 +316,40 @@ DispatchQueue.main.async {
 }
 ```
 
+## lazy
+初期化のタイミングをずらすことができる。
+アクセスした時に値が決定する。と思う。
+
+```
+### lazyなし
+var defaultPrice = 100
+
+class Item {
+var price: Int = defaultPrice
+}
+
+let item = Item()
+
+defaultPrice = 200
+print(item.price) // 100
+
+### lazyあり
+var defaultPrice = 100
+
+class Item {
+lazy var price: Int = defaultPrice
+}
+
+let item = Item()
+
+defaultPrice = 200
+print(item.price) // 200
+
+defaultPrice = 300
+print(item.price) // 200
+
+```
+
 
 
 # Error
