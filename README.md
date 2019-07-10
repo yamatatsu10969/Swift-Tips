@@ -373,6 +373,30 @@ print(item.price) // 200
 `https://scior.hatenablog.com/entry/2018/12/29/100000`
 
 
+## DateFormatter 
+### 一番良いdateFormat 　
+```
+formatter.dateFormat = "yyyy/MM/dd HH:mm"
+```
+hhだと24時間表記にならない
+mmだと、表示がおかしくなる
+
+## Result<T, Error> 
+### Usage
+```
+enum databaseError: Error {
+    case entry
+    case def
+    case out
+}
+
+func test() -> Result<String,Error> {
+    if let id = messages[0].messageId {
+        return .success(id)
+    }
+    return .failure(databaseError.entry)
+}
+```
 
 
 # Error
