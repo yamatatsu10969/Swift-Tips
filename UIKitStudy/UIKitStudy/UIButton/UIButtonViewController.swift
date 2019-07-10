@@ -11,7 +11,26 @@ import UIKit
 final class UIButtonViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var tryView: UIView!
     
+    var alart: UIAlertController?
+    var color: UIColor?
+    var co: UICollectionView?
+    var cl: UIColor?
+    var fo: UIFont?
+    var la: UILabel?
+    var te: UITextField?
+    var tex: UITextView?
+    var im: UIImage?
+    var ima: UIImageView?
+    var pi: UIPickerView?
+    var sc: UIScrollView?
+    var sw: UISwitch?
+    var vi: UIView?
+    var vie: UIViewController?
+    var ta: UITabBarController?
+    var tab: UITabBarItem?
+    var na: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +44,9 @@ final class UIButtonViewController: UIViewController {
         button.adjustsImageWhenHighlighted = false
         button.reversesTitleShadowWhenHighlighted = true
         
+        color = UIColor.red
+        tryView.backgroundColor = color
+        color?.setStroke()
         
         // .Selected
 //        let mySelectedAttributedTitle =
@@ -58,5 +80,9 @@ final class UIButtonViewController: UIViewController {
         print(button.currentTitleShadowColor)
         print(button.titleLabel?.text)
         print(button.imageView?.image)
+        alart = UIAlertController(title: "よっ", message: "こんにちは", preferredStyle: .actionSheet)
+        if let VC = alart {
+            self.show(VC, sender: self)
+        }
     }
 }

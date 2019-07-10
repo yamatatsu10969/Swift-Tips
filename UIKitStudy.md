@@ -75,3 +75,43 @@ NSUnderlineStyle.styleSingle.rawValueなど
 負の値のときは縁取りの内側は.foregroundColorになる（通常はこちらを使うと思う）
 ### .shadow
 文字の影。NSShadowオブジェクトを指定
+
+
+## UIAlertController
+## UIButton
+## UICollectionView
+## UIColor
+## UIFont
+## UILabel
+## UITextField
+## UITextView
+## UIImage
+## UIImageView
+## UIPickerView
+## UIScrollView
+## UISwitch
+## UIView
+## UIViewController
+## UITabBarController
+## UITabBarItem
+## UINavigationController
+
+
+## UIAlertController
+## UIButton
+## UICollectionView
+## UIColor
+## UIFont
+## UILabel
+## UITextField
+## UITextView
+## UIImage
+## UIImageView
+## UIPickerView
+## UIScrollView
+## UISwitch
+## UIView
+## UIViewController
+## UITabBarController
+## UITabBarItem
+## UINavigationController

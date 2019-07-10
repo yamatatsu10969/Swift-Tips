@@ -28,10 +28,20 @@
                                     <action selector="buttonTapped:forEvent:" destination="ySx-Cu-Koe" eventType="touchUpInside" id="1CW-mJ-Zec"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfF-bu-dmO">
+                                <rect key="frame" x="20" y="164" width="374" height="200"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="KJe-1k-ENn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1AF-uC-Uwf" firstAttribute="trailing" secondItem="dfF-bu-dmO" secondAttribute="trailing" constant="20" id="0Il-5Y-eBC"/>
                             <constraint firstItem="1AF-uC-Uwf" firstAttribute="trailing" secondItem="57J-1e-0DL" secondAttribute="trailing" constant="100" id="7Aq-2X-dxb"/>
+                            <constraint firstItem="dfF-bu-dmO" firstAttribute="leading" secondItem="1AF-uC-Uwf" secondAttribute="leading" constant="20" id="7Hm-od-hC6"/>
+                            <constraint firstItem="dfF-bu-dmO" firstAttribute="top" secondItem="57J-1e-0DL" secondAttribute="bottom" constant="20" id="RC5-bA-a2i"/>
                             <constraint firstItem="57J-1e-0DL" firstAttribute="leading" secondItem="1AF-uC-Uwf" secondAttribute="leading" constant="100" id="Uyt-RE-cWf"/>
                             <constraint firstItem="57J-1e-0DL" firstAttribute="top" secondItem="1AF-uC-Uwf" secondAttribute="top" constant="50" id="v7j-ik-C8I"/>
                         </constraints>
@@ -39,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="57J-1e-0DL" id="FyN-IK-qOk"/>
+                        <outlet property="tryView" destination="dfF-bu-dmO" id="aB7-vo-Ai6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBe-78-kTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
