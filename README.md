@@ -506,7 +506,6 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
 
 ```
 
-## UIButton
 ## UICollectionView
 ## UIColor
 ## UIFont
