@@ -541,4 +541,30 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
 ## UITabBarController
 ## UITabBarItem
 ## UINavigationController
+
+
+
+# デザインパターン
+## シングルトン パターン
+### 使いどころ
+ シングルトンパターンはインスタンスが1個しか生成されないことを保証したい時に使います。
  
+ ### 書き方
+ struct はインスタンスが一つではなくなるので、ダメ。値型だからね。
+ 以下の2行を書けばできる。
+ ```
+ static let shared =  ~~~
+ private init() {}
+ ```
+ 例：
+ ```
+ class MyApplication {
+     // 自動的に遅延初期化される(初回アクセスのタイミングでインスタンス生成)
+     static let shared = MyApplication()
+     // 外部からのインスタンス生成をコンパイルレベルで禁止
+     private init() {}
+ }
+ ```
+ 
+ ### 参考はmonoさん
+ https://medium.com/swift-column/singleton-398078bcc58d
