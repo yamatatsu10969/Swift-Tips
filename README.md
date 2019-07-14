@@ -36,6 +36,7 @@ return true
 ### 選択された時に色を変えないようにする
 `selectedStyle = .none `
 
+↓↓↓↓↓↓こいつ使えない子かも。
 ```
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(false)
@@ -44,6 +45,15 @@ override func viewWillAppear(_ animated: Bool) {
     }
 }
 ```
+
+### 選択された後に、背景色を元に戻す
+```
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // これを入れると、セレクトした後に、背景色が元に戻る。
+    tableView.deselectRow(at: indexPath, animated: true)
+}
+```
+
 ### 選択不可にする
 #### 全体
 `self.tableView.allowsSelection = false`
@@ -416,6 +426,64 @@ func test() -> Result<String,Error> {
     return .failure(databaseError.entry)
 }
 ```
+
+
+## Codable
+参照：　https://qiita.com/s_emoto/items/deda5abcb0adc2217e86
+### 常にCodableな型
+　String, Int, Double, Data, Date, URL
+　
+### 条件付きでCodableな型
+　Array, Dictionary, Optional　→　中身がCodableの場合
+　struct　→　Codableなプロパティのみから構成されている場合
+
+```
+User.swift
+struct Friend: Codable {  // -> プロパティが全てCodableなのでCodable
+    name: String // -> Codable
+    age: Int // -> Codable
+}
+
+struct User: Codable {
+    name: String
+    age: Int
+    friends: [Friend] // -> 中身がCodableなのでCodable
+    startDate: Date
+    role: String
+}
+```
+
+### CodingKeys の使いどころ
+上記のように記述すればCodableとして使えるけど、EncodeとDecodeでキー名が異なる時に一対一対応させる必要がある。その時に使うのが「CodingKeys」。
+```
+struct User: Codable {
+    name: String
+    age: Int
+    friends: [Friend]
+    startDate: Date
+    role: String
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case age
+        case friends
+        case startDate = "start_date"  // ←　これ
+        case role
+    }
+}
+```
+
+### 結構重要な実装のこと
+【実装する時の決まり事】
+・enumの名前は「CodingKeys」にする
+・case名をプロパティ名、rawValueをエンコード結果のフィールド名として定義する
+・case自体を省略するとエンコード・デコードされない。この時、Decodableにするにはdefault valueが必要。
+
+例で示した＠「SnakeCase ↔︎ CamelCase」の場合は
+Swift4.1以降では、DecoderのkeyDecodingStrategyを使うと省略できるみたいです。
+
+
+
 
 
 # Error
