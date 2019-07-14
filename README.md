@@ -568,3 +568,39 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
  
  ### 参考はmonoさん
  https://medium.com/swift-column/singleton-398078bcc58d
+ 
+ 
+ # クリーンアーキテクチャ
+ ## 目的
+ ### ソフトウェアアーキテクチャの目的は、求められるシステムを構築、保守するために必要な人材を最小限に抑えることである。
+ 
+ 
+ ## 3つのプログラミングの型
+ ### 関数型プログラミング
+ 変数が変化しない。
+ 可変コンポーネントと不変コンポーネントに分離させている。
+ 
+ ### オブジェクト指向プログラミング
+継承、ポリモーフィズム、カプセル化を特徴とする。
+
+### 構造化プログラミング
+goto文が老害
+
+
+## 設計の原則 SOLIDの原則
+
+### 単一責任の原則（SRP：Single Responsibility Principle）
+モジュールはたった一つのアクターに対して責務を負うべきである。
+モジュール → ファイルのこと。
+
+### オープン・クローズドの原則（OCP：Opne-Closed Principle）
+
+### リスコフの置換原則（LSP：Liskov Substitution Principle）
+
+### インターフェイス分離の原則（ISP：Interfade Segregation Principle）
+
+### 依存関係逆転の原則（DIP：Dependency Inversion Principle）
+
+
+
+
