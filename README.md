@@ -610,6 +610,19 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
 ## UITabBarItem
 ## UINavigationController
 
+# Xcode Tips
+## デバッグ時とリリース時で実行させるコードを変更させる
+```
+//  広告ID設定
+#if DEBUG
+    // テスト用
+    admobView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+#else
+    // 本番用
+    admobView.adUnitID = "realID"
+#endif
+```
+
 
 
 # デザインパターン
@@ -681,7 +694,6 @@ goto文が老害
 ・変化しやすい具象クラスを継承しない。
 ・具象関数をオーバーライドしない
 ・変化しやすい具象を名指しで参照しない
-
 
 
 
