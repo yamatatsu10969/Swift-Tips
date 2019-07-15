@@ -296,6 +296,20 @@ stackViewが表示されないのは、
 ### 短い振動を出す
 `AudioServicesPlaySystemSound(SystemSoundID("1519")!)`
 
+## 三項演算子の使いどころ
+### if let のかわり
+```
+tableView の return 〇〇.countの時。
+
+〇〇がオプショナルの場合、
+if let or guard let を使うけど、省略したい場合、
+
+return 〇〇?.count ?? 0
+
+にすると省略できる。
+
+```
+
 
 ## dispatchDeque
 ### 非同期処理が何個もある場合 (配列の処理の時に、非同期処理にして性能を上げたいとき。)
