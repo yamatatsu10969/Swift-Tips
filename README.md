@@ -625,6 +625,9 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
 ## UINavigationController
 
 # Xcode Tips
+## リリースとデバッグモードがある。
+
+
 ## デバッグ時とリリース時で実行させるコードを変更させる
 ```
 //  広告ID設定
@@ -635,6 +638,15 @@ alart = UIAlertController(title: "よっ", message: "こんにちは", preferred
     // 本番用
     admobView.adUnitID = "realID"
 #endif
+```
+
+## マクロについて
+以下のコードがマクロと呼ばれるもの。
+Swiftのコードとは違って、#で始まる。
+アプリの全体に関わるコード。自分は主に、リリースやデバッグモードを変更する時にしか使わない。
+```
+#if DEBUG
+#else
 ```
 
 
