@@ -22,6 +22,27 @@ labelの高さを決める時というのは、そのlabelが固定の文言で�
 
 ほとんどの場合、値は決めて置くことがシステムのためになるが、可変になりそうなところだけはAutoLayoutに任せるのが吉だ。
 
+## 三項演算子
+### 二つしか選択肢がない時によく使う。Bool のとき多いかも
+```
+条件式 ？ trueの時：　falseの時
+isRead ? ReadCell.className:UnReadCell.className
+```
+
+## optional のラッピング
+### フォースアンラップ
+! を使う。必ずアンラップが成功するときだけ使う
+
+### guard let 
+guard 文で先に離脱させたい時に使う
+
+### if let
+- 他に条件式があるとき
+- そのスコープないだけでOKの時
+
+### ?? を使う
+if let や guard let を使うと冗長だと思った時
+
 
 
 ## AppDelegate
