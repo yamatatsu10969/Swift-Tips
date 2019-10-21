@@ -21,3 +21,7 @@
 [Swift記事まとめ(毎日自動更新)
 ](https://qiita.com/hikarut/items/6138e8e406da17f5b67c#_reference-293a4617d08ff7911199)
 
+[個人開発のアプリが輝くために/For personally developed apps to shine](https://speakerdeck.com/ahiru/for-personally-developed-apps-to-shine?slide=14)
+
+[〜拝啓〜 アプリ開発を始める半年前の自分へ。アプリ公開初日に300ユーザーを獲得できるぞ!!!](https://qiita.com/yamatatsu10969/items/96a1462997b4478f9aea)
+
