@@ -18,3 +18,6 @@
 [業務未経験のWeb系エンジニア志望者が面接で聞かれる頻出質問とその対策
 ](https://www.youtube.com/watch?v=b1_v0PkprC8)
 
+[Swift記事まとめ(毎日自動更新)
+](https://qiita.com/hikarut/items/6138e8e406da17f5b67c#_reference-293a4617d08ff7911199)
+
