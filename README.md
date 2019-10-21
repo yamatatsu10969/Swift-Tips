@@ -532,7 +532,7 @@ Swift4.1以降では、DecoderのkeyDecodingStrategyを使うと省略できる�
 # VIPER
 
 
-# Error
+# Error エラー
 ## beta版を使っているときにアプリを申請に出すとbinary errorでリジェクト
 参考：https://www.chrisjmendez.com/2017/05/02/modify-systemversion-plist-within-macos-sierra/
 ### 手順
@@ -549,6 +549,11 @@ Swift4.1以降では、DecoderのkeyDecodingStrategyを使うと省略できる�
 
 戻す　リカバリーモードのターミナル
 `csrutil enable`
+ 
+ 
+ ## Archive の時だけエラーが出る
+ Podfile と Target の iOS バージョンが異なっている。全てのTarget のバージョンを合わせる。
+ https://teratail.com/questions/99422
  
 
 # UIKit Study
