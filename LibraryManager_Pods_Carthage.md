@@ -9,7 +9,7 @@ Pods/
 Carthage/
 ```
 
-# Cocoapods
+# CocoaPods
 
 ## バージョン指定インストール
 ```
