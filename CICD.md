@@ -8,3 +8,10 @@
 ```
 
 [CI/CDのエキスパートが解説：CI/CDとは何か？ なぜ今、必要とされるのか？](https://codezine.jp/article/detail/11083)
+
+
+## Bitrise 
+
+### Qiita 書いたので、これを見れば大丈夫そう。
+[エラーを100回以上出して学んだ CIツール(Bitrise) の使い方 【設定全公開】](https://qiita.com/yamatatsu10969/items/b37d7ed2b26127e76879)
+

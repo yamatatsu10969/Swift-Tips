@@ -687,5 +687,21 @@ Swiftのコードとは違って、#で始まる。
 ```
 
 
+# 設定ファイル
+
+## dSYM
+
+[リリースしたアプリのdSYMをFirebase/CrashlyticsにアップロードするTips](https://qiita.com/giiiita/items/333af46cade134883c83)
+
+[dSYMのアップロードはBitrise/fastlaneで自動化しとくといいぞ](https://qiita.com/tihimsm/items/0a8c4a104e4470567e89)
+
+[Firebase CrashlyticsへdSYMをアップロードする](https://made.livesense.co.jp/entry/2019/05/31/070000)
+
+fastlane ドキュメント
+https://docs.fastlane.tools/actions/download_dsyms/
+https://docs.fastlane.tools/actions/upload_symbols_to_crashlytics/
+https://docs.fastlane.tools/actions/clean_build_artifacts/
+
+[これ見れば dSYM が何者かわかるぞよ。](https://discuss.bitrise.io/t/ios-dsym-files-download-or-upload/1395/3)
 
 
