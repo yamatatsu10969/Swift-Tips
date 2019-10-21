@@ -6,3 +6,15 @@
 ](https://qiita.com/KazaKago/items/2835d76ced43f913c31d#product-name)
 
 [Xcodeでデバッグ実行中にクラッシュした時に捗るブレークポイント設定](https://qiita.com/mono0926/items/bf70c7ef15db046ee163)
+
+[iOSアプリの開発速度を170%に向上させたデバッグノウハウ](https://speakerdeck.com/orgachem/debugging-knowhow-that-improved-our-development-velocity-to-170-percent)
+
+[iOSアプリエンジニアのための面接質問集100選](http://nsblogger.hatenablog.com/entry/2016/12/24/ios_interview)
+
+[iOSアプリ新規開発のノウハウ](http://nsblogger.hatenablog.com/entry/2017/12/13/ios_development_know_how)
+
+[Wolg/awesome-swift](https://github.com/Wolg/awesome-swift)
+
+[業務未経験のWeb系エンジニア志望者が面接で聞かれる頻出質問とその対策
+](https://www.youtube.com/watch?v=b1_v0PkprC8)
+
